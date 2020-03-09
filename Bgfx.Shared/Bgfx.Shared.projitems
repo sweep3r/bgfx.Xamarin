@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{1EC7446E-C1AE-4F32-A5E7-7BD3417FE59F}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Bgfx</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Bgfx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Callbacks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capabilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DynamicIndexBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DynamicVertexBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Encoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FrameBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IndexBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IndirectBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InstanceDataBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MemoryBlock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NativeMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OcclusionQuery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PlatformData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Program.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RenderState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StencilFlags.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Texture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransientIndexBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransientVertexBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Uniform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VertexBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VertexLayout.cs" />
+  </ItemGroup>
+</Project>

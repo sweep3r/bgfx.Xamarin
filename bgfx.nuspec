@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<package>
+<metadata>
+    <id>bgfx</id>
+    <version>$version$</version>
+    <authors>Tobias Boogh</authors>
+    <description>bgfx C++ Wrapper Library</description>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright 2020</copyright>
+</metadata>
+<files>
+    <!-- iOS -->
+    <file src="Bgfx.iOS/bin/Debug/Bgfx.dll" target="lib/Xamarin.iOS10/Bgfx.dll" />
+    <file src="Bgfx.iOS/bin/Debug/Bgfx.pdb" target="lib/Xamarin.iOS10/Bgfx.pdb" />
+
+    <!-- netstandard2.0 -->
+    <file src="Bgfx.Standard/bin/Debug/netstandard2.0/Bgfx.dll" target="lib/netstandard2.0/Bgfx.dll" />
+    <file src="Bgfx.Standard/bin/Debug/netstandard2.0/Bgfx.pdb" target="lib/netstandard2.0/Bgfx.pdb" />
+
+</files>
+</package>
