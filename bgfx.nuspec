@@ -9,6 +9,10 @@
     <copyright>Copyright 2020</copyright>
 </metadata>
 <files>
+    <!-- Mac -->
+    <file src="Bgfx.Mac/bin/Debug/Bgfx.dll" target="lib/Xamarin.Mac/Bgfx.dll" />
+    <file src="Bgfx.Mac/bin/Debug/Bgfx.pdb" target="lib/Xamarin.Mac/Bgfx.pdb" />
+
     <!-- iOS -->
     <file src="Bgfx.iOS/bin/Debug/Bgfx.dll" target="lib/Xamarin.iOS10/Bgfx.dll" />
     <file src="Bgfx.iOS/bin/Debug/Bgfx.pdb" target="lib/Xamarin.iOS10/Bgfx.pdb" />

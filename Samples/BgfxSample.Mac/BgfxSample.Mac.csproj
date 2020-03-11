@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02F6732F-CC50-4D78-AFC5-772B5F984E9C}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BgfxSample.Mac</RootNamespace>
+    <AssemblyName>BgfxSample.Mac</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <Profiling>true</Profiling>
+    <AOTMode>None</AOTMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <LinkMode>SdkOnly</LinkMode>
+    <AOTMode>None</AOTMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+    <Reference Include="Ara3D.Math3D.Standard">
+      <HintPath>..\packages\Ara3D.Math3D.1.0.0\lib\netstandard2.0\Ara3D.Math3D.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Bgfx">
+      <HintPath>..\packages\bgfx.1.0.11\lib\Xamarin.Mac\Bgfx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="GameViewController.cs" />
+    <Compile Include="GameViewController.designer.cs">
+      <DependentUpon>GameViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainMenu.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shaders\metal\cs_gdr_stream_compaction.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_vsm_linear_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_deferred_combine.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_vectordisplay_blit.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_esm.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_rsm_combine.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_unpackdepth.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_bump.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_ibl_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_color_lighting_linear_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_deferred_light_uav.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_update_3d.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_vsm_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_hblur_vsm.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_stencil_color_black.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_cubes.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_particle.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_color_lighting_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_hdr_lumavg.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_black.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_gdr_downscale_hi_z.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_hard_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_wf_wireframe.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_stencil_texture_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_update.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_terrain_render.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_deferred_debug_line.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_terrain_lod.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_esm_linear.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_prepare_depths.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_terrain_render.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowvolume_svback.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_hdr_lum.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_pcf_linear_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_picking_shaded.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_prepare_depth_mip.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_wf_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svbackcolor.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_callback.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_hard.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_oit.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_gdr_instanced_indirect_rendering.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_hdr_blur.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_vt_unlit.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_picking_shaded.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svfrontcolor.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_esm_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_albedo_output.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_packdepth_linear.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_update.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_hard_linear.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_vblur.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_packdepth_vsm_linear.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_hdr_skybox.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_apply.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_tree.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_deferred_light_ta.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_gdr_copy_z.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_sms_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_terrain_update_indirect.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_deferred_debug_line.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_rsm_combine.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_upsample.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_sms_shadow.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_instancing.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svsidecolor.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_terrain.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_fullscreen.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_color.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_stencil_color_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_gdr_occlude_props.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_hblur.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_packdepth_vsm.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_hard_omni.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_stencil_color_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_deferred_geom.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_deferred_debug.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_oit_wb_blit.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_hdr_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_deferred_debug.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_hdr_bright.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_load_counter_clear.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_sky_landscape.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_rsm_shadow.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_pcf_omni.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_vsm_linear.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_terrain_height_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_ibl_skybox.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowvolume_svfront.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_packdepth_linear.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_vsm_linear_omni.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_non_smart_blur.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_pom.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_assao.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_stencil_color_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_postprocess_importance_map_a.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_terrain_init.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_sky.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_assao_gbuffer.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_vectordisplay_fb.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_update_instances.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_esm_omni.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_hard_linear_omni.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_picking_id.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_packdepth.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_sms_shadow_pd.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_postprocess_importance_map_b.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_color_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_sky_color_banding_fix.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_vsm_omni.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_oit_wb_separate.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_sms_mesh_pd.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_oit_wb_separate_blit.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_unpackdepth_vsm.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_update.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svsidetex.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svside.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowvolume_texture_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_stencil_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_smart_blur.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_prepare_depths_and_normals_half.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_rsm_lbuffer.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_smart_blur_wide.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowvolume_color_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_esm_linear_omni.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_pcf.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_rsm_gbuffer.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_hdr_lum.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_raymarching.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_sky.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_deferred_combine.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowvolume_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_vectordisplay_blur.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_pcf_linear_omni.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_ibl_skybox.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_pom.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowvolume_svside.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svsideblank.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_raymarching.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_wf_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_unpackdepth.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_rsm_shadow.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_pcf_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_rsm_gbuffer.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowvolume_color_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_gdr_instanced_indirect_rendering.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_vblur.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_rsm_lbuffer.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svfronttex2.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svbacktex2.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_hdr_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_gdr_render_occlusion.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_non_smart_apply.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_hdr_bright.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_texture_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_oit_blit.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_albedo_output.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_deferred_light.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_wf_wireframe.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_deferred_light.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_vblur_vsm.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_update_cmp.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svfronttex1.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svbacktex1.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_init_instances.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svfrontblank.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_hard_linear_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_instancing.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_sms_shadow.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_sms_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_vsm.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_generate_q2.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_svbackblank.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_stencil_texture_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_generate_q3.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_terrain.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_sky_landscape.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_hdr_skybox.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_color_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_bump_instanced.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_deferred_geom.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_terrain_render_normal.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_packdepth.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_hdr_tonemap.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_generate_q1.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_tree.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_generate_q3base.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_generate_q0.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_color_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_hdr_blur.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_oit.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_hblur.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowvolume_color_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_depth.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_prepare_depths_and_normals.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_texture_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_callback.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_oit_wb.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_color_lighting_linear_omni.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_deferred_clear_uav.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_sms_shadow_pd.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_hdr_tonemap.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_vt_mip.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_bump.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_stencil_color_lighting.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_prepare_depths_half.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_hdr_lumavg.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_pcf_linear.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_terrain_update_draw.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_shadowmaps_color_lighting_esm_linear_csm.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_bloom_combine.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_assao_deferred_combine.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_color_lighting_linear.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_particle.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_stencil_texture.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_generate_importance_map.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_downsample.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_vectordisplay_fb.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_assao_non_smart_half_apply.bin" />
+    <BundleResource Include="Resources\shaders\metal\cs_indirect.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_cubes.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_vt_generic.bin" />
+    <BundleResource Include="Resources\shaders\metal\fs_ibl_mesh.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_stencil_color.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_assao_gbuffer.bin" />
+    <BundleResource Include="Resources\shaders\metal\vs_shadowmaps_color_lighting_omni.bin" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>

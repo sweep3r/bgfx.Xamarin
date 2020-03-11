@@ -541,10 +541,12 @@ namespace Bgfx
 
 #pragma warning restore IDE1006 // Naming Styles
 
-#if DEBUG
+#if iOS
+        const string DllName = "__Internal";
+#elif Mac
         const string DllName = "__Internal";
 #else
-        const string DllName = "bgfx.dll";
+        const string DllName = "__Internal";
 #endif
     }
 }
